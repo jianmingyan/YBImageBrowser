@@ -38,7 +38,7 @@ Pod::Spec.new do |s|
     core.resources    = "YBImageBrowser/YBImageBrowser.bundle"
     core.frameworks   = "Foundation", "UIKit"
     core.dependency 'SDWebImage', '~>5.0.0'
-    core.dependency 'YYImage'
+ #   core.dependency 'YYImage'
   end
 
   s.subspec 'Video' do |video|
