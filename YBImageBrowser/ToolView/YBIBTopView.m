@@ -33,7 +33,8 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     CGFloat height = self.bounds.size.height, width = self.bounds.size.width;
-    self.pageLabel.frame = CGRectMake(16, 0, width / 3, height);
+    self.pageLabel.center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
+    self.pageLabel.bounds = CGRectMake(0, 0, width / 3, height);
     CGFloat buttonWidth = 54;
     self.operationButton.frame = CGRectMake(width - buttonWidth, 0, buttonWidth, height);
 }
