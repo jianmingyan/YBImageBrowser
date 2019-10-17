@@ -111,10 +111,9 @@
         _topView = [YBIBTopView new];
         _topView.operationType = YBIBTopViewOperationTypeMore;
         __weak typeof(self) wSelf = self;
-        WS(weakSelf);
         [_topView setClickOperation:^(YBIBTopViewOperationType type) {
-            if (weakSelf.clickOperationAction) {
-                weakSelf.clickOperationAction();
+            if (wSelf.clickOperationAction) {
+                wSelf.clickOperationAction();
             }
 //            __strong typeof(wSelf) self = wSelf;
 //            if (!self) return;
