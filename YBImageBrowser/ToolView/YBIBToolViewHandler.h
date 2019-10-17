@@ -56,6 +56,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YBIBToolViewHandler : NSObject <YBIBToolViewHandler>
 
+@property (nonatomic, copy) dispatch_block_t clickOperationAction;
+
 /// 弹出表单视图
 @property (nonatomic, strong, readonly) YBIBSheetView *sheetView;
 

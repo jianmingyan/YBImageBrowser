@@ -40,7 +40,7 @@
 }
 
 - (void)yb_respondsToLongPress {
-    [self showSheetView];
+    //[self showSheetView];
 }
 
 - (void)yb_hide:(BOOL)hide {
@@ -111,24 +111,28 @@
         _topView = [YBIBTopView new];
         _topView.operationType = YBIBTopViewOperationTypeMore;
         __weak typeof(self) wSelf = self;
+        WS(weakSelf);
         [_topView setClickOperation:^(YBIBTopViewOperationType type) {
-            __strong typeof(wSelf) self = wSelf;
-            if (!self) return;
-            switch (type) {
-                case YBIBTopViewOperationTypeSave: {
-                    id<YBIBDataProtocol> data = self.yb_currentData();
-                    if ([data respondsToSelector:@selector(yb_saveToPhotoAlbum)]) {
-                        [data yb_saveToPhotoAlbum];
-                    }
-                }
-                    break;
-                case YBIBTopViewOperationTypeMore: {
-                    [self showSheetView];
-                }
-                    break;
-                default:
-                    break;
+            if (weakSelf.clickOperationAction) {
+                weakSelf.clickOperationAction();
             }
+//            __strong typeof(wSelf) self = wSelf;
+//            if (!self) return;
+//            switch (type) {
+//                case YBIBTopViewOperationTypeSave: {
+//                    id<YBIBDataProtocol> data = self.yb_currentData();
+//                    if ([data respondsToSelector:@selector(yb_saveToPhotoAlbum)]) {
+//                        [data yb_saveToPhotoAlbum];
+//                    }
+//                }
+//                    break;
+//                case YBIBTopViewOperationTypeMore: {
+//                    [self showSheetView];
+//                }
+//                    break;
+//                default:
+//                    break;
+//            }
         }];
     }
     return _topView;
