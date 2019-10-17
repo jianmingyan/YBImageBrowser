@@ -188,7 +188,7 @@ static CGFloat _NSStringPathScale(NSString *string) {
             _bytesPerFrame = CGImageGetBytesPerRow(image.CGImage) * CGImageGetHeight(image.CGImage);
             _animatedImageMemorySize = _bytesPerFrame * decoder.frameCount;
         }
-        self.yy_isDecodedForDisplay = YES;
+        self.isDecodedForDisplay = YES;
     }
     return self;
 }
