@@ -99,7 +99,7 @@
         _pageLabel = [UILabel new];
         _pageLabel.textColor = [UIColor whiteColor];
         _pageLabel.font = [UIFont boldSystemFontOfSize:16];
-        _pageLabel.textAlignment = NSTextAlignmentLeft;
+        _pageLabel.textAlignment = NSTextAlignmentCenter;
         _pageLabel.adjustsFontSizeToFitWidth = YES;
     }
     return _pageLabel;

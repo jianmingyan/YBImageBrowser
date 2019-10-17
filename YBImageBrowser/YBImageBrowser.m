@@ -214,6 +214,9 @@
     NSInteger page = self.currentPage;
     [self.collectionView reloadData];
     self.currentPage = page;
+    if (self.dataSourceArray.count == 0) {
+        [self hide];
+    }
 }
 
 - (id<YBIBDataProtocol>)currentData {
